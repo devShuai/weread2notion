@@ -135,7 +135,7 @@ def insert_to_notion(bookName, bookId, cover, sort, author, isbn, rating, catego
         minutes = readingTime % 3600 // 60
         if minutes > 0:
             format_time += f"{minutes}分"
-        properties["Status"] = get_select("读完" if markedStatus == 4 else "在读")
+        properties["阅读状态"] = get_select("读完" if markedStatus == 4 else "在读")
         properties["ReadingTime"] = get_rich_text(format_time)
         properties["Progress"] = get_number(readingProgress)
         if "finishedDate" in read_info:
